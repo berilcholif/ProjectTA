@@ -3,16 +3,20 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_application_1/DataPelanggan.dart';
 import 'package:flutter_application_1/Tagihan.dart';
+import 'customer.dart';
+import 'penjemputan.dart';
+import 'main.dart';
 
 class halamanDashboard extends StatelessWidget {
   const halamanDashboard({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  
+  Widget build(BuildContext context) { 
     final List<String> entries = <String>["A", "B", "C"];
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(children: [
+      drawer: Drawer( 
+        child: Wrap(children: [
           ListTile(
             title: Text("Dashboard"),
             leading: Icon(Icons.home),
@@ -29,15 +33,45 @@ class halamanDashboard extends StatelessWidget {
                   builder: (context) => const HalamanPelanggan()));
             },
           ),
+          
           ListTile(
+            title: Text("Customer"),
+            leading: Icon(Icons.person_2),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const HalamanCustomer()));
+            },
+            
+          ),
+          ListTile(
+            title: Text("Penjemputan"),
+            leading: Icon(Icons.document_scanner),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const HalamanPenjemputan()));
+            },
+            
+          ),
+ListTile(
             title: Text("Tagihan"),
             leading: Icon(Icons.shopping_cart),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const HalamanTagihan()));
             },
-          )
+            
+          ), SizedBox(height: MediaQuery.of(context).size.height * 0.5),const Divider(color: Colors.black54,),
+          ListTile(
+            title: Text("Logout"),
+            leading: Icon(Icons.logout),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => MyApp ()));
+            },
+            
+          ),
         ]),
+        
       ),
       appBar: AppBar(
         title: Text("Dashboard"),

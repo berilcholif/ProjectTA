@@ -4,6 +4,8 @@ import 'package:flutter_application_1/DataPelanggan.dart';
 import 'package:flutter_application_1/Login.dart';
 import 'package:flutter_application_1/Tagihan.dart';
 import 'package:flutter_application_1/about.dart';
+import 'customer.dart';
+import 'penjemputan.dart';
 
 void main() {
   runApp(const MaterialApp(

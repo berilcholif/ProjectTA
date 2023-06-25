@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class HalamanPelanggan extends StatelessWidget {
-  const HalamanPelanggan({super.key});
+class HalamanPenjemputan extends StatelessWidget {
+  const HalamanPenjemputan({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Data Pelanggan"),
+        title: Text("penjemputan"),
         backgroundColor: const Color.fromARGB(197, 36, 22, 2),
       ),
-       body: Container(
+      body: Container(
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
